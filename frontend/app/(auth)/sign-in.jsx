@@ -17,6 +17,7 @@ export default function Page() {
 
   // Handle the submission of the sign-in form
   const onSignInPress = async () => {
+    console.log("Sign in pressed with email:", emailAddress)
     if (!isLoaded) return
 
     // Start the sign-in process using the email and password provided
@@ -25,11 +26,12 @@ export default function Page() {
         identifier: emailAddress,
         password,
       })
-
+      console.log("Sign in attempt result:", signInAttempt)
       // If sign-in process is complete, set the created session as active
       // and redirect the user
       if (signInAttempt.status === 'complete') {
         await setActive({ session: signInAttempt.createdSessionId })
+        console.log("Sign in successful, redirecting to home page")
         router.replace('/')
       } else {
         // If the status isn't complete, check why. User might need to
@@ -44,8 +46,9 @@ export default function Page() {
       }
     }
   }
-
+console.log(isLoaded)
   return (
+
     <KeyboardAwareScrollView
       style = {{flex: 1}}
       contentContainerStyle={{flexGrow: 1}}

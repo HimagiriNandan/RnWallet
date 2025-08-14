@@ -1,0 +1,1 @@
+export const API_URL = 'https://rn-wallet-backend.vercel.app/api'

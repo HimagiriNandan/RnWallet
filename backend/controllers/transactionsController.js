@@ -80,9 +80,9 @@ async function getSummarybyUserId(req, res){
     `;
 
     const summary = {
-      balance: parseFloat(balanceResult[0].balance),
-      income: parseFloat(incomeResult[0].income),
-      expenses: parseFloat(expenses[0].expenses)
+      balance: balanceResult[0].balance,
+      income: incomeResult[0].income,
+      expenses: expenses[0].expenses
     };
 
     res.status(200).json(summary);
