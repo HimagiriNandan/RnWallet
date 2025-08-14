@@ -6,6 +6,10 @@
   "routes": [
     {
       "src": "/(.*)",
+      "headers": {
+        "Access-Control-Allow-Origin": "https://rn-wallet-frontend.vercel.app",
+        "Access-Control-Allow-Credentials": "true"
+      },
       "dest": "server.js"
     }
   ]
